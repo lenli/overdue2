@@ -29,13 +29,9 @@
     
     NSArray *taskList = [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY];
     for (NSDictionary *dictionary in taskList) {
-        NSLog(@"dictionary: %@", dictionary);
-
         LLTask *taskObject = [self taskObjectFromDictionary:dictionary];
-        NSLog(@"taskObject: %@", taskObject);
         [self.taskObjects addObject:taskObject];
     }
-    NSLog(@"taskObjects: %@", self.taskObjects);
 
 }
 
