@@ -54,6 +54,12 @@
     if ([segue.destinationViewController isKindOfClass:[LLAddTaskViewController class]]) {
         LLAddTaskViewController *targetViewController = segue.destinationViewController;
         targetViewController.delegate = self;
+    } else if ([segue.destinationViewController isKindOfClass:[LLDetailTaskViewController class]]) {
+        LLDetailTaskViewController *targetViewController = segue.destinationViewController;
+        NSIndexPath *path = sender;
+        
+        LLTask *selectedTask = self.taskObjects[path.row];
+        targetViewController.taskObject = selectedTask;
     }
 }
 
@@ -123,11 +129,45 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"toDetailTaskViewControllerSegue" sender:indexPath];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LLTask *task = self.taskObjects[indexPath.row];
     [self updateCompletionStatusOfTask:task forIndexPath:indexPath];
     
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.taskObjects removeObjectAtIndex:indexPath.row];
+        
+        NSMutableArray *newTaskList = [[NSMutableArray alloc] init];
+        for (LLTask *taskObject in self.taskObjects) {
+            [newTaskList addObject:[self taskObjectAsAPropertyList:taskObject]];
+            
+        }
+        /*
+        NSMutableArray *taskList = [[[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY] mutableCopy];
+        if (!taskList) taskList = [[NSMutableArray alloc] init];
+        
+        [taskList removeObjectAtIndex:indexPath.row];*/
+        
+        [[NSUserDefaults standardUserDefaults] setObject:newTaskList forKey:TASKLIST_OBJECT_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+
 }
 
 #pragma mark -- Helper Methods

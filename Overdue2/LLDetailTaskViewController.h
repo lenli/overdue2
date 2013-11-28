@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLTask.h"
 
 @interface LLDetailTaskViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *taskTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDetailLabel;
-- (IBAction)editBarButtonPressed:(UIBarButtonItem *)sender;
+@property (strong, nonatomic) LLTask *taskObject;
 
+- (IBAction)editBarButtonPressed:(UIBarButtonItem *)sender;
 
 @end

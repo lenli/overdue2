@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LLAddTaskViewController.h"
+#import "LLDetailTaskViewController.h"
 
 @interface LLViewController : UIViewController <LLAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
