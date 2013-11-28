@@ -115,7 +115,6 @@
                     <connections>
                         <outlet property="taskDateLabel" destination="RoB-NS-mbW" id="tCx-v4-Dul"/>
                         <outlet property="taskDetailLabel" destination="SEC-Y9-dzt" id="EcN-N1-46R"/>
-                        <outlet property="taskLabel" destination="yTK-1R-mFQ" id="0Jy-4a-SUc"/>
                         <outlet property="taskTitleLabel" destination="yTK-1R-mFQ" id="UKI-Bd-dFb"/>
                         <segue destination="e74-8R-hzG" kind="push" identifier="toEditTaskViewControllerSegue" id="NTz-Uz-SIL"/>
                     </connections>
