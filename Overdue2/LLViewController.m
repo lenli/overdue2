@@ -28,11 +28,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // Load TaskList from NSUserDefaults
+//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:TASKLIST_OBJECT_KEY];
+    
     NSArray *taskList = [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY];
     for (NSDictionary *dictionary in taskList) {
         LLTask *taskObject = [self taskObjectFromDictionary:dictionary];
         [self.taskObjects addObject:taskObject];
     }
+    NSLog(@"taskObjects: %@",self.taskObjects);
 
     // Set up Table View
     self.tableView.delegate = self;
@@ -110,7 +113,21 @@
     
     cell.detailTextLabel.text = stringFromDate;
     
+    // Cell Color
+    BOOL isTaskOverdue = [self isDateGreaterThanDate:[NSDate date] and:task.date];
+    
+    if (task.isCompleted) cell.backgroundColor = [UIColor greenColor];
+    else if (isTaskOverdue) cell.backgroundColor = [UIColor redColor];
+    else cell.backgroundColor = [UIColor yellowColor];
+    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LLTask *task = self.taskObjects[indexPath.row];
+    [self updateCompletionStatusOfTask:task forIndexPath:indexPath];
+    
 }
 
 #pragma mark -- Helper Methods
@@ -131,4 +148,28 @@
     return taskObject;
 }
 
+-(BOOL)isDateGreaterThanDate:(NSDate *)isDate and:(NSDate *)greaterThanDate
+{
+    NSTimeInterval firstDate = [isDate timeIntervalSince1970];
+    NSTimeInterval secondDate = [greaterThanDate timeIntervalSince1970];
+    
+    if (firstDate > secondDate) return YES;
+    else return NO;
+    
+}
+
+-(void)updateCompletionStatusOfTask:(LLTask *)task forIndexPath:(NSIndexPath *)indexPath
+{
+    NSMutableArray *taskList = [[[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY] mutableCopy];
+    if (!taskList) taskList = [[NSMutableArray alloc] init];
+    
+    [taskList removeObjectAtIndex:indexPath.row];
+    
+    task.isCompleted = !task.isCompleted;   // Toggle BOOL
+    [taskList insertObject:[self taskObjectAsAPropertyList:task] atIndex:indexPath.row];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:taskList forKey:TASKLIST_OBJECT_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.tableView reloadData];
+}
 @end
