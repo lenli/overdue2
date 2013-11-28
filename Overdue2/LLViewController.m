@@ -27,12 +27,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // Load TaskList from NSUserDefaults
     NSArray *taskList = [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY];
     for (NSDictionary *dictionary in taskList) {
         LLTask *taskObject = [self taskObjectFromDictionary:dictionary];
         [self.taskObjects addObject:taskObject];
     }
 
+    // Set up Table View
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,7 +83,35 @@
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+#pragma mark -- UITableViewDataSource
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.taskObjects count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure Cell
+    LLTask *task = self.taskObjects[indexPath.row];
+    cell.textLabel.text = task.title;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *stringFromDate = [formatter stringFromDate:task.date];
+    
+    cell.detailTextLabel.text = stringFromDate;
+    
+    return cell;
+}
 
 #pragma mark -- Helper Methods
 
