@@ -28,6 +28,11 @@
 		BAFD8EEF18484CAD001ECF33 /* checked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */; };
 		BAFD8EF018484CAD001ECF33 /* unchecked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */; };
 		BAFD8EF918491742001ECF33 /* find_search.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8EF818491742001ECF33 /* find_search.png */; };
+		BAFD8F0218492FB2001ECF33 /* overdue120.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8EFF18492FB2001ECF33 /* overdue120.png */; };
+		BAFD8F0318492FB2001ECF33 /* overdue80.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F0018492FB2001ECF33 /* overdue80.png */; };
+		BAFD8F0418492FB2001ECF33 /* overdue58.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F0118492FB2001ECF33 /* overdue58.png */; };
+		BAFD8F0B184932E9001ECF33 /* launch640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F09184932E9001ECF33 /* launch640x960.png */; };
+		BAFD8F0C184932E9001ECF33 /* launch640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F0A184932E9001ECF33 /* launch640x1136.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,23 +46,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA0AED46184D7C9000A958A3 /* Overdue2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overdue2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA0AED46184D7C9000A958A3 /* Overdue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overdue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0AED49184D7C9000A958A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA0AED4B184D7C9000A958A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BA0AED4D184D7C9000A958A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		BA0AED51184D7C9000A958A3 /* Overdue2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue2-Info.plist"; sourceTree = "<group>"; };
+		BA0AED51184D7C9000A958A3 /* Overdue-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue-Info.plist"; sourceTree = "<group>"; };
 		BA0AED53184D7C9000A958A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA0AED55184D7C9000A958A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BA0AED57184D7C9000A958A3 /* Overdue2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overdue2-Prefix.pch"; sourceTree = "<group>"; };
+		BA0AED57184D7C9000A958A3 /* Overdue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overdue-Prefix.pch"; sourceTree = "<group>"; };
 		BA0AED58184D7C9000A958A3 /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
 		BA0AED59184D7C9100A958A3 /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
 		BA0AED5C184D7C9100A958A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA0AED5E184D7C9100A958A3 /* LLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLViewController.h; sourceTree = "<group>"; };
 		BA0AED5F184D7C9100A958A3 /* LLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLViewController.m; sourceTree = "<group>"; };
 		BA0AED61184D7C9100A958A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BA0AED67184D7C9100A958A3 /* Overdue2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Overdue2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA0AED67184D7C9100A958A3 /* OverdueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverdueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0AED68184D7C9100A958A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		BA0AED70184D7C9100A958A3 /* Overdue2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue2Tests-Info.plist"; sourceTree = "<group>"; };
+		BA0AED70184D7C9100A958A3 /* OverdueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OverdueTests-Info.plist"; sourceTree = "<group>"; };
 		BA0AED72184D7C9100A958A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA0AED74184D7C9100A958A3 /* Overdue2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue2Tests.m; sourceTree = "<group>"; };
 		BA0AED7E184D7E6B00A958A3 /* LLAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLAddTaskViewController.h; sourceTree = "<group>"; };
@@ -71,6 +76,11 @@
 		BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_checkbox.png; sourceTree = "<group>"; };
 		BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked_checkbox.png; sourceTree = "<group>"; };
 		BAFD8EF818491742001ECF33 /* find_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_search.png; sourceTree = "<group>"; };
+		BAFD8EFF18492FB2001ECF33 /* overdue120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overdue120.png; sourceTree = "<group>"; };
+		BAFD8F0018492FB2001ECF33 /* overdue80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overdue80.png; sourceTree = "<group>"; };
+		BAFD8F0118492FB2001ECF33 /* overdue58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overdue58.png; sourceTree = "<group>"; };
+		BAFD8F09184932E9001ECF33 /* launch640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x960.png; sourceTree = "<group>"; };
+		BAFD8F0A184932E9001ECF33 /* launch640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x1136.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +120,8 @@
 		BA0AED47184D7C9000A958A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA0AED46184D7C9000A958A3 /* Overdue2.app */,
-				BA0AED67184D7C9100A958A3 /* Overdue2Tests.xctest */,
+				BA0AED46184D7C9000A958A3 /* Overdue.app */,
+				BA0AED67184D7C9100A958A3 /* OverdueTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,10 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				BAFD8EF718487CF4001ECF33 /* Images */,
-				BA0AED51184D7C9000A958A3 /* Overdue2-Info.plist */,
+				BA0AED51184D7C9000A958A3 /* Overdue-Info.plist */,
 				BA0AED52184D7C9000A958A3 /* InfoPlist.strings */,
 				BA0AED55184D7C9000A958A3 /* main.m */,
-				BA0AED57184D7C9000A958A3 /* Overdue2-Prefix.pch */,
+				BA0AED57184D7C9000A958A3 /* Overdue-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -165,7 +175,7 @@
 		BA0AED6F184D7C9100A958A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BA0AED70184D7C9100A958A3 /* Overdue2Tests-Info.plist */,
+				BA0AED70184D7C9100A958A3 /* OverdueTests-Info.plist */,
 				BA0AED71184D7C9100A958A3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -198,6 +208,11 @@
 		BAFD8EF718487CF4001ECF33 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BAFD8F09184932E9001ECF33 /* launch640x960.png */,
+				BAFD8F0A184932E9001ECF33 /* launch640x1136.png */,
+				BAFD8EFF18492FB2001ECF33 /* overdue120.png */,
+				BAFD8F0118492FB2001ECF33 /* overdue58.png */,
+				BAFD8F0018492FB2001ECF33 /* overdue80.png */,
 				BAFD8EF818491742001ECF33 /* find_search.png */,
 				BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */,
 				BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */,
@@ -208,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA0AED45184D7C9000A958A3 /* Overdue2 */ = {
+		BA0AED45184D7C9000A958A3 /* Overdue */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA0AED78184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "Overdue2" */;
+			buildConfigurationList = BA0AED78184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "Overdue" */;
 			buildPhases = (
 				BA0AED42184D7C9000A958A3 /* Sources */,
 				BA0AED43184D7C9000A958A3 /* Frameworks */,
@@ -220,14 +235,14 @@
 			);
 			dependencies = (
 			);
-			name = Overdue2;
+			name = Overdue;
 			productName = Overdue2;
-			productReference = BA0AED46184D7C9000A958A3 /* Overdue2.app */;
+			productReference = BA0AED46184D7C9000A958A3 /* Overdue.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BA0AED66184D7C9100A958A3 /* Overdue2Tests */ = {
+		BA0AED66184D7C9100A958A3 /* OverdueTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA0AED7B184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "Overdue2Tests" */;
+			buildConfigurationList = BA0AED7B184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "OverdueTests" */;
 			buildPhases = (
 				BA0AED63184D7C9100A958A3 /* Sources */,
 				BA0AED64184D7C9100A958A3 /* Frameworks */,
@@ -238,9 +253,9 @@
 			dependencies = (
 				BA0AED6D184D7C9100A958A3 /* PBXTargetDependency */,
 			);
-			name = Overdue2Tests;
+			name = OverdueTests;
 			productName = Overdue2Tests;
-			productReference = BA0AED67184D7C9100A958A3 /* Overdue2Tests.xctest */;
+			productReference = BA0AED67184D7C9100A958A3 /* OverdueTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -253,12 +268,15 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "LL inc.";
 				TargetAttributes = {
+					BA0AED45184D7C9000A958A3 = {
+						DevelopmentTeam = D3R2N4L8FQ;
+					};
 					BA0AED66184D7C9100A958A3 = {
 						TestTargetID = BA0AED45184D7C9000A958A3;
 					};
 				};
 			};
-			buildConfigurationList = BA0AED41184D7C9000A958A3 /* Build configuration list for PBXProject "Overdue2" */;
+			buildConfigurationList = BA0AED41184D7C9000A958A3 /* Build configuration list for PBXProject "Overdue" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -271,8 +289,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA0AED45184D7C9000A958A3 /* Overdue2 */,
-				BA0AED66184D7C9100A958A3 /* Overdue2Tests */,
+				BA0AED45184D7C9000A958A3 /* Overdue */,
+				BA0AED66184D7C9100A958A3 /* OverdueTests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,8 +301,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFD8EEF18484CAD001ECF33 /* checked_checkbox.png in Resources */,
+				BAFD8F0418492FB2001ECF33 /* overdue58.png in Resources */,
 				BAFD8EF018484CAD001ECF33 /* unchecked_checkbox.png in Resources */,
+				BAFD8F0318492FB2001ECF33 /* overdue80.png in Resources */,
+				BAFD8F0B184932E9001ECF33 /* launch640x960.png in Resources */,
 				BAFD8EF918491742001ECF33 /* find_search.png in Resources */,
+				BAFD8F0218492FB2001ECF33 /* overdue120.png in Resources */,
+				BAFD8F0C184932E9001ECF33 /* launch640x1136.png in Resources */,
 				BA0AED62184D7C9100A958A3 /* Images.xcassets in Resources */,
 				BA0AED54184D7C9000A958A3 /* InfoPlist.strings in Resources */,
 				BA0AED5D184D7C9100A958A3 /* Main.storyboard in Resources */,
@@ -329,7 +352,7 @@
 /* Begin PBXTargetDependency section */
 		BA0AED6D184D7C9100A958A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA0AED45184D7C9000A958A3 /* Overdue2 */;
+			target = BA0AED45184D7C9000A958A3 /* Overdue */;
 			targetProxy = BA0AED6C184D7C9100A958A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -439,10 +462,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Leonard Li (HCN3MGAT6U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Overdue2/Overdue2-Prefix.pch";
-				INFOPLIST_FILE = "Overdue2/Overdue2-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Overdue2/Overdue-Prefix.pch";
+				INFOPLIST_FILE = "Overdue2/Overdue-Info.plist";
+				PRODUCT_NAME = Overdue;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -452,10 +478,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Leonard Li (HCN3MGAT6U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Overdue2/Overdue2-Prefix.pch";
-				INFOPLIST_FILE = "Overdue2/Overdue2-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Overdue2/Overdue-Prefix.pch";
+				INFOPLIST_FILE = "Overdue2/Overdue-Info.plist";
+				PRODUCT_NAME = Overdue;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -476,8 +505,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Overdue2Tests/Overdue2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Overdue2Tests/OverdueTests-Info.plist";
+				PRODUCT_NAME = OverdueTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -495,8 +524,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overdue2/Overdue2-Prefix.pch";
-				INFOPLIST_FILE = "Overdue2Tests/Overdue2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Overdue2Tests/OverdueTests-Info.plist";
+				PRODUCT_NAME = OverdueTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -505,7 +534,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA0AED41184D7C9000A958A3 /* Build configuration list for PBXProject "Overdue2" */ = {
+		BA0AED41184D7C9000A958A3 /* Build configuration list for PBXProject "Overdue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA0AED76184D7C9100A958A3 /* Debug */,
@@ -514,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA0AED78184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "Overdue2" */ = {
+		BA0AED78184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "Overdue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA0AED79184D7C9100A958A3 /* Debug */,
@@ -523,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA0AED7B184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "Overdue2Tests" */ = {
+		BA0AED7B184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "OverdueTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA0AED7C184D7C9100A958A3 /* Debug */,
