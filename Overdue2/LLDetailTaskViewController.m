@@ -27,13 +27,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.taskTitleLabel.text = self.taskObject.title;
-    self.taskDetailLabel.text = self.taskObject.description;
     
+    // Title Label
+    self.taskTitleLabel.text = self.taskObject.title;
+    
+    // Detail Label Aligned Top Left
+    CGRect labelFrame = CGRectMake(20, 255, 280, 150);
+    self.taskDetailLabel = [[UILabel alloc] initWithFrame:labelFrame];
+    [self updateTaskDetail];
+    [self.view addSubview:self.taskDetailLabel];
+    
+    // Date Label
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     NSString *dateAsString = [formatter stringFromDate:self.taskObject.date];
     self.taskDateLabel.text = dateAsString;
+    
+    // Switch
     self.taskCompletedSwitch.tintColor = [UIColor yellowColor];
     [self updateCompletedSwitch];
 
@@ -69,15 +79,18 @@
 -(void)didUpdateTask
 {
     self.taskTitleLabel.text = self.taskObject.title;
-    self.taskDetailLabel.text = self.taskObject.description;
+    
+    [self updateTaskDetail];
+
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     NSString *dateAsString = [formatter stringFromDate:self.taskObject.date];
     self.taskDateLabel.text = dateAsString;
     
-    [self.navigationController popViewControllerAnimated:YES];
-    [self.delegate updateTask];
     [self updateCompletedSwitch];
+
+    [self.delegate updateTask];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)updateCompletedSwitch
@@ -109,5 +122,16 @@
     if (firstDate > secondDate) return YES;
     else return NO;
     
+}
+-(void)updateTaskDetail
+{
+    [self.taskDetailLabel removeFromSuperview];
+    CGRect labelFrame = CGRectMake(20, 255, 280, 150);
+    self.taskDetailLabel = [[UILabel alloc] initWithFrame:labelFrame];
+    [self.taskDetailLabel setText:self.taskObject.description];
+    [self.taskDetailLabel setFont: [UIFont fontWithName:@"Avenir" size:16.0]];
+    [self.taskDetailLabel setNumberOfLines:0];
+    [self.taskDetailLabel sizeToFit];
+    [self.view addSubview:self.taskDetailLabel];
 }
 @end

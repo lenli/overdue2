@@ -109,13 +109,18 @@
     
     // Configure Cell
     LLTask *task = self.taskObjects[indexPath.row];
-    cell.textLabel.text = task.title;
     
+    // Title
+    cell.textLabel.text = task.title;
+    [cell.textLabel setFont: [UIFont fontWithName:@"Avenir" size:16.0]];
+    
+    // Date
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     NSString *stringFromDate = [formatter stringFromDate:task.date];
-    
     cell.detailTextLabel.text = stringFromDate;
+    [cell.detailTextLabel setFont: [UIFont fontWithName:@"Avenir" size:12.0]];
+    
     
     // Cell ImageView
     BOOL isTaskOverdue = [self isDateGreaterThanDate:[NSDate date] and:task.date];
