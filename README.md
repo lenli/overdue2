@@ -1,8 +1,7 @@
-
  overdue by lenli
 ==================
 
-Task List iOS app for Code Coalition assignment
+a “Task List” iOS app for Code Coalition iOS Beginner Bootcamp
 
 For extra credit, I also did the following:
 
