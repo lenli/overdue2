@@ -117,12 +117,30 @@
     
     cell.detailTextLabel.text = stringFromDate;
     
-    // Cell Color
+    // Cell ImageView
     BOOL isTaskOverdue = [self isDateGreaterThanDate:[NSDate date] and:task.date];
     
-    if (task.isCompleted) cell.detailTextLabel.textColor = [UIColor greenColor];
-    else if (isTaskOverdue) cell.detailTextLabel.textColor = [UIColor redColor];
-    else cell.detailTextLabel.textColor = [UIColor yellowColor];
+    cell.imageView.layer.cornerRadius = 7.0;
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.borderColor = [UIColor blackColor].CGColor;
+    cell.imageView.layer.borderWidth = 3.0;
+    
+    if (task.isCompleted) cell.imageView.backgroundColor = [UIColor greenColor];
+    else if (isTaskOverdue) cell.imageView.backgroundColor = [UIColor redColor];
+    else cell.imageView.backgroundColor = [UIColor yellowColor];
+    
+    cell.imageView.image = (task.isCompleted) ? [UIImage imageNamed:@"checked_checkbox.png"] : [UIImage imageNamed:@"unchecked_checkbox.png"];
+  
+    // Cell AccessoryView
+    UIImage *accImage = [UIImage imageNamed:@"edit.png"];
+    UIButton *accButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGRect frame = CGRectMake(0, 0, accImage.size.width, accImage.size.height);
+    accButton.frame = frame;
+    
+    [accButton setBackgroundImage:accImage forState:UIControlStateNormal];
+    [accButton addTarget:self action:@selector(checkButtonTapped:event:) forControlEvents:UIControlEventTouchUpInside];
+    accButton.backgroundColor = [UIColor clearColor];
+    cell.accessoryView = accButton;
     
     return cell;
 }
@@ -177,6 +195,18 @@
 }
 
 #pragma mark -- Helper Methods
+- (void)checkButtonTapped:(id)sender event:(id)event
+{
+    NSSet *touches = [event allTouches];
+    UITouch *touch = [touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint: currentTouchPosition];
+    
+    if (indexPath != nil)
+    {
+        [self tableView: self.tableView accessoryButtonTappedForRowWithIndexPath: indexPath];
+    }
+}
 
 -(void)saveTasks
 {
