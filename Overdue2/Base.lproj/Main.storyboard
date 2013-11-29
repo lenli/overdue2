@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Overdue Tasklist-->
+        <!--View Controller - Tasklist-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="LLViewController" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Overdue Tasklist" id="vJA-Gj-ObX">
+                    <navigationItem key="navigationItem" title="Tasklist" id="vJA-Gj-ObX">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="krd-m2-M8L">
                             <connections>
                                 <action selector="editBarButtonPressed:" destination="vXZ-lx-hvc" id="EQp-VI-H4C"/>
@@ -124,21 +124,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-s3-G23">
-                                <rect key="frame" x="201" y="94" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i5-1z-C1q">
-                                <rect key="frame" x="38" y="94" width="77" height="21"/>
+                                <rect key="frame" x="95" y="98" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bjq-u6-daX">
-                                <rect key="frame" x="136" y="89" width="51" height="31"/>
+                                <rect key="frame" x="20" y="93" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="switchButtonPressed:" destination="DPe-5B-5EP" eventType="valueChanged" id="1HL-ms-737"/>
@@ -160,7 +153,6 @@
                         <outlet property="taskDateLabel" destination="RoB-NS-mbW" id="tCx-v4-Dul"/>
                         <outlet property="taskDetailLabel" destination="SEC-Y9-dzt" id="EcN-N1-46R"/>
                         <outlet property="taskTitleLabel" destination="yTK-1R-mFQ" id="UKI-Bd-dFb"/>
-                        <outlet property="taskToDoLabel" destination="7i5-1z-C1q" id="5Mt-YJ-GBh"/>
                         <segue destination="e74-8R-hzG" kind="push" identifier="toEditTaskViewControllerSegue" id="NTz-Uz-SIL"/>
                     </connections>
                 </viewController>
@@ -181,13 +173,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRH-XH-Vah">
-                                <rect key="frame" x="20" y="81" width="280" height="30"/>
+                                <rect key="frame" x="20" y="131" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mow-Jy-XLv">
-                                <rect key="frame" x="20" y="129" width="280" height="148"/>
+                                <rect key="frame" x="20" y="177" width="280" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92695935110000005" green="0.92747704620000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -222,21 +214,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </timeZone>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zl9-W4-cLf">
-                                <rect key="frame" x="203" y="307" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYb-vR-dUG">
-                                <rect key="frame" x="40" y="307" width="77" height="21"/>
+                                <rect key="frame" x="89" y="85" width="81" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xgq-pH-PzN">
-                                <rect key="frame" x="138" y="302" width="51" height="31"/>
+                                <rect key="frame" x="20" y="84" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="switchButtonPressed:" destination="e74-8R-hzG" eventType="valueChanged" id="4X7-U2-e6L"/>
@@ -257,13 +242,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="detailTextView" destination="mow-Jy-XLv" id="4g7-js-NEE"/>
                         <outlet property="taskCompletedLabel" destination="zl9-W4-cLf" id="nlr-LT-qyV"/>
                         <outlet property="taskCompletedSwitch" destination="Xgq-pH-PzN" id="MeQ-jW-7oU"/>
-                        <outlet property="taskToDoLabel" destination="OYb-vR-dUG" id="NCE-ip-Zd9"/>
                         <outlet property="titleTextField" destination="qRH-XH-Vah" id="EPJ-hE-soH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bch-Sf-3r3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="402"/>
+            <point key="canvasLocation" x="1017" y="457"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="Lay-Sv-Mjv">

@@ -144,9 +144,7 @@
 		BA0AED50184D7C9000A958A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BAFD8EF51848711A001ECF33 /* edit.png */,
-				BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */,
-				BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */,
+				BAFD8EF718487CF4001ECF33 /* Images */,
 				BA0AED51184D7C9000A958A3 /* Overdue2-Info.plist */,
 				BA0AED52184D7C9000A958A3 /* InfoPlist.strings */,
 				BA0AED55184D7C9000A958A3 /* main.m */,
@@ -195,6 +193,16 @@
 				BA0AED89184D8CA400A958A3 /* LLTask.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		BAFD8EF718487CF4001ECF33 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BAFD8EF51848711A001ECF33 /* edit.png */,
+				BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */,
+				BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -20,7 +20,6 @@
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UITextView *detailTextView;
 @property (strong, nonatomic) LLTask *taskObject;
-@property (strong, nonatomic) IBOutlet UILabel *taskToDoLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskCompletedLabel;
 @property (strong, nonatomic) IBOutlet UISwitch *taskCompletedSwitch;
 

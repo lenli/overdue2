@@ -83,21 +83,18 @@
     BOOL isTaskOverdue = [self isDateGreaterThanDate:[NSDate date] and:self.taskObject.date];
     
     if (self.taskObject.isCompleted) {
-        [self.taskCompletedLabel setHidden:NO];
-        [self.taskToDoLabel setHidden:YES];
+        self.taskCompletedLabel.text = @"Completed";
         [self.taskCompletedSwitch setOn:YES];
         self.taskCompletedSwitch.thumbTintColor = [UIColor whiteColor];
     } else if (isTaskOverdue) {
         self.taskCompletedSwitch.tintColor = [UIColor redColor];
         self.taskCompletedSwitch.thumbTintColor = [UIColor redColor];
-        [self.taskCompletedLabel setHidden:YES];
-        [self.taskToDoLabel setHidden:NO];
+        self.taskCompletedLabel.text = @"Overdue";
         [self.taskCompletedSwitch setOn:NO];
     } else {
         self.taskCompletedSwitch.tintColor = [UIColor yellowColor];
         self.taskCompletedSwitch.thumbTintColor = [UIColor yellowColor];
-        [self.taskCompletedLabel setHidden:YES];
-        [self.taskToDoLabel setHidden:NO];
+        self.taskCompletedLabel.text = @"In Progress";
         [self.taskCompletedSwitch setOn:NO];
     }
 }

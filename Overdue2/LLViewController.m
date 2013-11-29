@@ -218,7 +218,6 @@
     [[NSUserDefaults standardUserDefaults] setObject:taskList forKey:TASKLIST_OBJECT_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY]);
 }
 
 -(NSDictionary *)taskObjectAsAPropertyList:(LLTask *)taskObject
