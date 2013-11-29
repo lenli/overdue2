@@ -137,7 +137,7 @@
     cell.imageView.image = (task.isCompleted) ? [UIImage imageNamed:@"checked_checkbox.png"] : [UIImage imageNamed:@"unchecked_checkbox.png"];
   
     // Cell AccessoryView
-    UIImage *accImage = [UIImage imageNamed:@"edit.png"];
+    UIImage *accImage = [UIImage imageNamed:@"find_search.png"];
     UIButton *accButton = [UIButton buttonWithType:UIButtonTypeCustom];
     CGRect frame = CGRectMake(0, 0, accImage.size.width, accImage.size.height);
     accButton.frame = frame;
