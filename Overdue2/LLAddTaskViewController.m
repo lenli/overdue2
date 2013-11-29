@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.nameTextField.delegate = self;
+    self.detailTextView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +44,23 @@
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
     [self.delegate didCancel];
+}
+
+#pragma mark - UITextFieldDelegate Methods
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.nameTextField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - UITextViewDelegate Methods
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [self.detailTextView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - Helper Methods

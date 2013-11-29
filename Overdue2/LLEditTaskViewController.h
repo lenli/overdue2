@@ -7,11 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLTask.h"
 
-@interface LLEditTaskViewController : UIViewController
+@protocol LLEditTaskViewControllerDelegate <NSObject>
+-(void)didUpdateTask;
+-(void)updateCompletedSwitch;
+@end
+
+@interface LLEditTaskViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
+@property (weak, nonatomic) id <LLEditTaskViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UITextView *detailTextView;
+@property (strong, nonatomic) LLTask *taskObject;
+@property (strong, nonatomic) IBOutlet UILabel *taskToDoLabel;
+@property (strong, nonatomic) IBOutlet UILabel *taskCompletedLabel;
+@property (strong, nonatomic) IBOutlet UISwitch *taskCompletedSwitch;
+
+- (IBAction)switchButtonPressed:(UISwitch *)sender;
 - (IBAction)saveBarButtonPressed:(UIBarButtonItem *)sender;
 
 @end

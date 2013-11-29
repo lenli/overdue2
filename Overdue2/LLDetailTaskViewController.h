@@ -8,13 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "LLTask.h"
+#import "LLEditTaskViewController.h"
 
-@interface LLDetailTaskViewController : UIViewController
+@protocol LLDetailTaskViewControllerDelegate <NSObject>
+-(void)updateTask;
+@end
+
+@interface LLDetailTaskViewController : UIViewController <LLEditTaskViewControllerDelegate>
+@property (weak, nonatomic) id <LLDetailTaskViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UILabel *taskTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDetailLabel;
 @property (strong, nonatomic) LLTask *taskObject;
+@property (strong, nonatomic) IBOutlet UILabel *taskToDoLabel;
+@property (strong, nonatomic) IBOutlet UILabel *taskCompletedLabel;
+@property (strong, nonatomic) IBOutlet UISwitch *taskCompletedSwitch;
 
+- (IBAction)switchButtonPressed:(UISwitch *)sender;
 - (IBAction)editBarButtonPressed:(UIBarButtonItem *)sender;
 
 @end

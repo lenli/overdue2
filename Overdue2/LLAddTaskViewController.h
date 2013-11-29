@@ -14,7 +14,7 @@
 -(void)didAddTask:(LLTask *)task;
 @end
 
-@interface LLAddTaskViewController : UIViewController
+@interface LLAddTaskViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) id <LLAddTaskViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;

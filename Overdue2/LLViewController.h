@@ -10,7 +10,7 @@
 #import "LLAddTaskViewController.h"
 #import "LLDetailTaskViewController.h"
 
-@interface LLViewController : UIViewController <LLAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface LLViewController : UIViewController <LLAddTaskViewControllerDelegate, LLDetailTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *taskObjects;
 

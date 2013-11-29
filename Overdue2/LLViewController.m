@@ -27,9 +27,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // Load TaskList from NSUserDefaults
-//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:TASKLIST_OBJECT_KEY];
-    
+    // Load TaskList from NSUserDefaults    
     NSArray *taskList = [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY];
     for (NSDictionary *dictionary in taskList) {
         LLTask *taskObject = [self taskObjectFromDictionary:dictionary];
@@ -59,6 +57,7 @@
         
         LLTask *selectedTask = self.taskObjects[path.row];
         targetViewController.taskObject = selectedTask;
+        targetViewController.delegate = self;
     }
 }
 
@@ -113,7 +112,7 @@
     cell.textLabel.text = task.title;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
+    [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     NSString *stringFromDate = [formatter stringFromDate:task.date];
     
     cell.detailTextLabel.text = stringFromDate;
@@ -121,9 +120,9 @@
     // Cell Color
     BOOL isTaskOverdue = [self isDateGreaterThanDate:[NSDate date] and:task.date];
     
-    if (task.isCompleted) cell.backgroundColor = [UIColor greenColor];
-    else if (isTaskOverdue) cell.backgroundColor = [UIColor redColor];
-    else cell.backgroundColor = [UIColor yellowColor];
+    if (task.isCompleted) cell.detailTextLabel.textColor = [UIColor greenColor];
+    else if (isTaskOverdue) cell.detailTextLabel.textColor = [UIColor redColor];
+    else cell.detailTextLabel.textColor = [UIColor yellowColor];
     
     return cell;
 }
@@ -163,10 +162,18 @@
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    NSDictionary *taskObjectToMove = [self.taskObjects objectAtIndex:sourceIndexPath.row];
+    NSDictionary *taskObjectToMove = self.taskObjects[sourceIndexPath.row];
     [self.taskObjects removeObjectAtIndex:sourceIndexPath.row];
     [self.taskObjects insertObject:taskObjectToMove atIndex:destinationIndexPath.row];
     [self saveTasks];
+}
+
+#pragma mark -- LLDetailTaskViewControllerDelegate
+
+-(void)updateTask
+{
+    [self saveTasks];
+    [self.tableView reloadData];
 }
 
 #pragma mark -- Helper Methods
@@ -174,6 +181,7 @@
 -(void)saveTasks
 {
     NSMutableArray *taskList = [[NSMutableArray alloc] init];
+    // for (int x = 0; x < [self.taskObjects count]; x ++) {
     for (LLTask *taskObject in self.taskObjects) {
         [taskList addObject:[self taskObjectAsAPropertyList:taskObject]];
     }

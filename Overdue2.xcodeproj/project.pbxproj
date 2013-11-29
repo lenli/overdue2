@@ -25,6 +25,8 @@
 		BA0AED84184D7EAD00A958A3 /* LLDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0AED83184D7EAD00A958A3 /* LLDetailTaskViewController.m */; };
 		BA0AED87184D7EB600A958A3 /* LLEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0AED86184D7EB600A958A3 /* LLEditTaskViewController.m */; };
 		BA0AED8A184D8CA400A958A3 /* LLTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0AED89184D8CA400A958A3 /* LLTask.m */; };
+		BAFD8EEF18484CAD001ECF33 /* checked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */; };
+		BAFD8EF018484CAD001ECF33 /* unchecked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		BA0AED86184D7EB600A958A3 /* LLEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLEditTaskViewController.m; sourceTree = "<group>"; };
 		BA0AED88184D8CA400A958A3 /* LLTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTask.h; sourceTree = "<group>"; };
 		BA0AED89184D8CA400A958A3 /* LLTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTask.m; sourceTree = "<group>"; };
+		BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_checkbox.png; sourceTree = "<group>"; };
+		BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked_checkbox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 		BA0AED50184D7C9000A958A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BAFD8EED18484CAD001ECF33 /* checked_checkbox.png */,
+				BAFD8EEE18484CAD001ECF33 /* unchecked_checkbox.png */,
 				BA0AED51184D7C9000A958A3 /* Overdue2-Info.plist */,
 				BA0AED52184D7C9000A958A3 /* InfoPlist.strings */,
 				BA0AED55184D7C9000A958A3 /* main.m */,
@@ -265,6 +271,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFD8EEF18484CAD001ECF33 /* checked_checkbox.png in Resources */,
+				BAFD8EF018484CAD001ECF33 /* unchecked_checkbox.png in Resources */,
 				BA0AED62184D7C9100A958A3 /* Images.xcassets in Resources */,
 				BA0AED54184D7C9000A958A3 /* InfoPlist.strings in Resources */,
 				BA0AED5D184D7C9100A958A3 /* Main.storyboard in Resources */,
@@ -501,6 +509,7 @@
 				BA0AED7A184D7C9100A958A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA0AED7B184D7C9100A958A3 /* Build configuration list for PBXNativeTarget "Overdue2Tests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +518,7 @@
 				BA0AED7D184D7C9100A958A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
