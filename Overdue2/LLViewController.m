@@ -35,7 +35,6 @@
         LLTask *taskObject = [self taskObjectFromDictionary:dictionary];
         [self.taskObjects addObject:taskObject];
     }
-    NSLog(@"taskObjects: %@",self.taskObjects);
 
     // Set up Table View
     self.tableView.delegate = self;
@@ -68,6 +67,14 @@
 }
 
 - (IBAction)editBarButtonPressed:(UIBarButtonItem *)sender {
+    if (self.tableView.editing == NO) {
+        [self.tableView setEditing: YES animated: YES];
+        self.navigationItem.leftBarButtonItem.title = @"Done";
+    } else {
+        [self.tableView setEditing: NO animated: YES];
+        self.navigationItem.leftBarButtonItem.title = @"Edit";
+    }
+    
 }
 
 #pragma mark -- LLAddTaskViewControllerDelegate
@@ -79,15 +86,7 @@
 -(void)didAddTask:(LLTask *)task
 {
     [self.taskObjects addObject:task];
-    
-    NSMutableArray *savedTasksArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASKLIST_OBJECT_KEY] mutableCopy];
-    if (!savedTasksArray) savedTasksArray = [[NSMutableArray alloc] init];
-    
-    NSDictionary *taskObjectAsDictionary = [self taskObjectAsAPropertyList:task];
-    [savedTasksArray addObject:taskObjectAsDictionary];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:savedTasksArray forKey:TASKLIST_OBJECT_KEY];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self saveTasks];
 
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -150,27 +149,39 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.taskObjects removeObjectAtIndex:indexPath.row];
-        
-        NSMutableArray *newTaskList = [[NSMutableArray alloc] init];
-        for (LLTask *taskObject in self.taskObjects) {
-            [newTaskList addObject:[self taskObjectAsAPropertyList:taskObject]];
-            
-        }
-        /*
-        NSMutableArray *taskList = [[[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY] mutableCopy];
-        if (!taskList) taskList = [[NSMutableArray alloc] init];
-        
-        [taskList removeObjectAtIndex:indexPath.row];*/
-        
-        [[NSUserDefaults standardUserDefaults] setObject:newTaskList forKey:TASKLIST_OBJECT_KEY];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self saveTasks];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 
 }
 
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    NSDictionary *taskObjectToMove = [self.taskObjects objectAtIndex:sourceIndexPath.row];
+    [self.taskObjects removeObjectAtIndex:sourceIndexPath.row];
+    [self.taskObjects insertObject:taskObjectToMove atIndex:destinationIndexPath.row];
+    [self saveTasks];
+}
+
 #pragma mark -- Helper Methods
+
+-(void)saveTasks
+{
+    NSMutableArray *taskList = [[NSMutableArray alloc] init];
+    for (LLTask *taskObject in self.taskObjects) {
+        [taskList addObject:[self taskObjectAsAPropertyList:taskObject]];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:taskList forKey:TASKLIST_OBJECT_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSLog(@"%@", [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY]);
+}
 
 -(NSDictionary *)taskObjectAsAPropertyList:(LLTask *)taskObject
 {
