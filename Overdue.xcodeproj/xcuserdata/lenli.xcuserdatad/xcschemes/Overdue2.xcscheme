@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA0AED45184D7C9000A958A3"
-               BuildableName = "Overdue2.app"
+               BuildableName = "Overdue.app"
                BlueprintName = "Overdue"
                ReferencedContainer = "container:Overdue.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA0AED66184D7C9100A958A3"
-               BuildableName = "Overdue2Tests.xctest"
+               BuildableName = "OverdueTests.xctest"
                BlueprintName = "OverdueTests"
                ReferencedContainer = "container:Overdue.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA0AED45184D7C9000A958A3"
-            BuildableName = "Overdue2.app"
+            BuildableName = "Overdue.app"
             BlueprintName = "Overdue"
             ReferencedContainer = "container:Overdue.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA0AED45184D7C9000A958A3"
-            BuildableName = "Overdue2.app"
+            BuildableName = "Overdue.app"
             BlueprintName = "Overdue"
             ReferencedContainer = "container:Overdue.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA0AED45184D7C9000A958A3"
-            BuildableName = "Overdue2.app"
+            BuildableName = "Overdue.app"
             BlueprintName = "Overdue"
             ReferencedContainer = "container:Overdue.xcodeproj">
          </BuildableReference>
