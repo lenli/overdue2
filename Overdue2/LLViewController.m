@@ -27,6 +27,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // Load Default Task
+    NSDictionary *defaultTask = @{TASK_TITLE: @"README task",
+                                  TASK_DATE: [NSDate date],
+                           TASK_DESCRIPTION: @"Welcome to Overdue, a lightweight task list app where you can add new tasks, reorder tasks, and delete tasks. You can also toggle tasks between “complete” (green) to “in progress” (yellow) or “overdue” (red).\n\nMore advanced features soon.\n@lenli",
+                            TASK_COMPLETION: @NO
+                                  };
+    NSArray *defaultArray = @[defaultTask];
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 defaultArray, TASKLIST_OBJECT_KEY, nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    
+    
     // Load TaskList from NSUserDefaults    
     NSArray *taskList = [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY];
     for (NSDictionary *dictionary in taskList) {
@@ -116,7 +128,7 @@
     
     // Date
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+    [formatter setDateFormat:@"'Due' yyyy-MM-dd 'at' HH:mm"];
     NSString *stringFromDate = [formatter stringFromDate:task.date];
     cell.detailTextLabel.text = stringFromDate;
     [cell.detailTextLabel setFont: [UIFont fontWithName:@"Avenir" size:12.0]];

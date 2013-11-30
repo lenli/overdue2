@@ -129,6 +129,7 @@
     CGRect labelFrame = CGRectMake(20, 255, 280, 150);
     self.taskDetailLabel = [[UILabel alloc] initWithFrame:labelFrame];
     [self.taskDetailLabel setText:self.taskObject.description];
+    [self.taskDetailLabel setTextColor:[UIColor darkGrayColor]];
     [self.taskDetailLabel setFont: [UIFont fontWithName:@"Avenir" size:16.0]];
     [self.taskDetailLabel setNumberOfLines:0];
     [self.taskDetailLabel sizeToFit];

@@ -31,8 +31,8 @@
 		BAFD8F0218492FB2001ECF33 /* overdue120.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8EFF18492FB2001ECF33 /* overdue120.png */; };
 		BAFD8F0318492FB2001ECF33 /* overdue80.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F0018492FB2001ECF33 /* overdue80.png */; };
 		BAFD8F0418492FB2001ECF33 /* overdue58.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F0118492FB2001ECF33 /* overdue58.png */; };
-		BAFD8F131849391C001ECF33 /* launch640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F111849391C001ECF33 /* launch640x960.png */; };
 		BAFD8F141849391C001ECF33 /* launch640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F121849391C001ECF33 /* launch640x1136.png */; };
+		BAFD8F1618496FC2001ECF33 /* launch640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFD8F1518496FC2001ECF33 /* launch640x960.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +79,8 @@
 		BAFD8EFF18492FB2001ECF33 /* overdue120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overdue120.png; sourceTree = "<group>"; };
 		BAFD8F0018492FB2001ECF33 /* overdue80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overdue80.png; sourceTree = "<group>"; };
 		BAFD8F0118492FB2001ECF33 /* overdue58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overdue58.png; sourceTree = "<group>"; };
-		BAFD8F111849391C001ECF33 /* launch640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x960.png; sourceTree = "<group>"; };
 		BAFD8F121849391C001ECF33 /* launch640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x1136.png; sourceTree = "<group>"; };
+		BAFD8F1518496FC2001ECF33 /* launch640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch640x960.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +208,7 @@
 		BAFD8EF718487CF4001ECF33 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BAFD8F111849391C001ECF33 /* launch640x960.png */,
+				BAFD8F1518496FC2001ECF33 /* launch640x960.png */,
 				BAFD8F121849391C001ECF33 /* launch640x1136.png */,
 				BAFD8EFF18492FB2001ECF33 /* overdue120.png */,
 				BAFD8F0118492FB2001ECF33 /* overdue58.png */,
@@ -304,8 +304,8 @@
 				BAFD8F0418492FB2001ECF33 /* overdue58.png in Resources */,
 				BAFD8EF018484CAD001ECF33 /* unchecked_checkbox.png in Resources */,
 				BAFD8F0318492FB2001ECF33 /* overdue80.png in Resources */,
-				BAFD8F131849391C001ECF33 /* launch640x960.png in Resources */,
 				BAFD8EF918491742001ECF33 /* find_search.png in Resources */,
+				BAFD8F1618496FC2001ECF33 /* launch640x960.png in Resources */,
 				BAFD8F0218492FB2001ECF33 /* overdue120.png in Resources */,
 				BAFD8F141849391C001ECF33 /* launch640x1136.png in Resources */,
 				BA0AED62184D7C9100A958A3 /* Images.xcassets in Resources */,
