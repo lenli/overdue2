@@ -53,6 +53,11 @@
     return YES;
 }
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [textField selectAll:self];
+}
+
 #pragma mark - UITextViewDelegate Methods
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -61,6 +66,10 @@
         return NO;
     }
     return YES;
+}
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    textView.text = @"";
 }
 
 #pragma mark - Helper Methods
