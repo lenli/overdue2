@@ -19,12 +19,15 @@
 - (id)initWithData:(NSDictionary *)data
 {
     self = [super init];
-    if (self ) {
+    if (self) {
         self.title = data[TASK_TITLE];
+            NSLog(@"data title: %@", data[TASK_TITLE]);
+            NSLog(@"self title: %@", self.title);
         self.description = data[TASK_DESCRIPTION];
         self.date = data[TASK_DATE];
         self.isCompleted = [ data[TASK_COMPLETION] boolValue ];
     }
+    NSLog(@"self: %@", self);
     return self;
 }
 

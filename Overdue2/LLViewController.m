@@ -28,10 +28,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     NSArray *taskList = [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY];
-    for (NSDictionary *taskData in taskList) {
-        [self.taskObjects addObject:taskData];
+    for (NSDictionary *dictionary in taskList) {
+        NSLog(@"dictionary: %@", dictionary);
+
+        LLTask *taskObject = [self taskObjectFromDictionary:dictionary];
+        NSLog(@"taskObject: %@", taskObject);
+        [self.taskObjects addObject:taskObject];
     }
-    NSLog(@"%@", self.taskObjects);
+    NSLog(@"taskObjects: %@", self.taskObjects);
 
 }
 
@@ -92,9 +96,9 @@
     return taskObjectAsDictionary;
 }
 
--(LLTask *)taskObjectFromDictionary:(NSDictionary *)taskDictionary
+-(LLTask *)taskObjectFromDictionary:(NSDictionary *)dictionary
 {
-    LLTask *taskObject = [[LLTask alloc] initWithData:taskDictionary];
+    LLTask *taskObject = [[LLTask alloc] initWithData:dictionary];
     return taskObject;
 }
 
