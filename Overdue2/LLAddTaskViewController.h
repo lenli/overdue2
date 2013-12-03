@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLTask.h"
+
+@protocol LLAddTaskViewControllerDelegate
+-(void)didCancel;
+-(void)didAddTask:(LLTask *)task;
+@end
 
 @interface LLAddTaskViewController : UIViewController
+@property (weak, nonatomic) id <LLAddTaskViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UITextView *detailTextView;
 - (IBAction)addTaskButtonPressed:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UIButton *cancelButtonPressed;
+- (IBAction)cancelButtonPressed:(UIButton *)sender;
+
 
 @end

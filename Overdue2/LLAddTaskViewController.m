@@ -36,5 +36,23 @@
 }
 
 - (IBAction)addTaskButtonPressed:(UIButton *)sender {
+    LLTask *newTask = [self getTaskObject];
+    [self.delegate didAddTask:newTask];
+}
+
+- (IBAction)cancelButtonPressed:(UIButton *)sender {
+    [self.delegate didCancel];
+}
+
+#pragma mark - Helper Methods
+- (LLTask *)getTaskObject
+{
+    LLTask *newTask = [[LLTask alloc] init];
+    newTask.title = self.nameTextField.text;
+    newTask.description = self.detailTextView.text;
+    newTask.date = self.datePicker.date;
+    newTask.isCompleted = NO;
+    
+    return newTask;
 }
 @end
