@@ -10,6 +10,12 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
+#define TASK_TITLE @"task_title"
+#define TASK_DESCRIPTION @"task_description"
+#define TASK_DATE @"task_date"
+#define TASK_COMPLETION @"task_completion"
+#define TASKLIST_OBJECT_KEY @"tasklist_object_key"
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
