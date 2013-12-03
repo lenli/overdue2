@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LLViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
+- (IBAction)addBarButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)editBarButtonPressed:(UIBarButtonItem *)sender;
 
 @end

@@ -21,6 +21,9 @@
 		BA0AED6B184D7C9100A958A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0AED4D184D7C9000A958A3 /* UIKit.framework */; };
 		BA0AED73184D7C9100A958A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA0AED71184D7C9100A958A3 /* InfoPlist.strings */; };
 		BA0AED75184D7C9100A958A3 /* Overdue2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0AED74184D7C9100A958A3 /* Overdue2Tests.m */; };
+		BA0AED80184D7E6B00A958A3 /* LLAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0AED7F184D7E6B00A958A3 /* LLAddTaskViewController.m */; };
+		BA0AED84184D7EAD00A958A3 /* LLDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0AED83184D7EAD00A958A3 /* LLDetailTaskViewController.m */; };
+		BA0AED87184D7EB600A958A3 /* LLEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0AED86184D7EB600A958A3 /* LLEditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		BA0AED70184D7C9100A958A3 /* Overdue2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue2Tests-Info.plist"; sourceTree = "<group>"; };
 		BA0AED72184D7C9100A958A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA0AED74184D7C9100A958A3 /* Overdue2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue2Tests.m; sourceTree = "<group>"; };
+		BA0AED7E184D7E6B00A958A3 /* LLAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLAddTaskViewController.h; sourceTree = "<group>"; };
+		BA0AED7F184D7E6B00A958A3 /* LLAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLAddTaskViewController.m; sourceTree = "<group>"; };
+		BA0AED82184D7EAD00A958A3 /* LLDetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDetailTaskViewController.h; sourceTree = "<group>"; };
+		BA0AED83184D7EAD00A958A3 /* LLDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDetailTaskViewController.m; sourceTree = "<group>"; };
+		BA0AED85184D7EB600A958A3 /* LLEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLEditTaskViewController.h; sourceTree = "<group>"; };
+		BA0AED86184D7EB600A958A3 /* LLEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLEditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +124,7 @@
 				BA0AED58184D7C9000A958A3 /* LLAppDelegate.h */,
 				BA0AED59184D7C9100A958A3 /* LLAppDelegate.m */,
 				BA0AED5B184D7C9100A958A3 /* Main.storyboard */,
-				BA0AED5E184D7C9100A958A3 /* LLViewController.h */,
-				BA0AED5F184D7C9100A958A3 /* LLViewController.m */,
+				BA0AED81184D7E9B00A958A3 /* Views */,
 				BA0AED61184D7C9100A958A3 /* Images.xcassets */,
 				BA0AED50184D7C9000A958A3 /* Supporting Files */,
 			);
@@ -150,6 +158,21 @@
 				BA0AED71184D7C9100A958A3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA0AED81184D7E9B00A958A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA0AED5E184D7C9100A958A3 /* LLViewController.h */,
+				BA0AED5F184D7C9100A958A3 /* LLViewController.m */,
+				BA0AED7E184D7E6B00A958A3 /* LLAddTaskViewController.h */,
+				BA0AED7F184D7E6B00A958A3 /* LLAddTaskViewController.m */,
+				BA0AED82184D7EAD00A958A3 /* LLDetailTaskViewController.h */,
+				BA0AED83184D7EAD00A958A3 /* LLDetailTaskViewController.m */,
+				BA0AED85184D7EB600A958A3 /* LLEditTaskViewController.h */,
+				BA0AED86184D7EB600A958A3 /* LLEditTaskViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +276,9 @@
 				BA0AED5A184D7C9100A958A3 /* LLAppDelegate.m in Sources */,
 				BA0AED56184D7C9000A958A3 /* main.m in Sources */,
 				BA0AED60184D7C9100A958A3 /* LLViewController.m in Sources */,
+				BA0AED84184D7EAD00A958A3 /* LLDetailTaskViewController.m in Sources */,
+				BA0AED80184D7E6B00A958A3 /* LLAddTaskViewController.m in Sources */,
+				BA0AED87184D7EB600A958A3 /* LLEditTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

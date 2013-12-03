@@ -26,4 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)addBarButtonPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"toAddTaskViewControllerSegue" sender:sender];
+}
+
+- (IBAction)editBarButtonPressed:(UIBarButtonItem *)sender {
+}
 @end
