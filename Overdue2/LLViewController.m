@@ -27,6 +27,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    NSArray *taskList = [[NSUserDefaults standardUserDefaults] objectForKey:TASKLIST_OBJECT_KEY];
+    for (NSDictionary *taskData in taskList) {
+        [self.taskObjects addObject:taskData];
+    }
+    NSLog(@"%@", self.taskObjects);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,6 +90,12 @@
                                              TASK_COMPLETION: taskObject.isCompleted ? @"YES" : @"NO"
                                              };
     return taskObjectAsDictionary;
+}
+
+-(LLTask *)taskObjectFromDictionary:(NSDictionary *)taskDictionary
+{
+    LLTask *taskObject = [[LLTask alloc] initWithData:taskDictionary];
+    return taskObject;
 }
 
 @end
