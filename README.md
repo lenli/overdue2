@@ -3,7 +3,7 @@
 
 Overdue is a “Task List” iOS app that I created for an assignment in my Code Coalition iOS Beginner Bootcamp class.
 
-However, I added some extra credit functionality:
+However, I added some extra credit functionality:<br><br>
 1)  Customized tableView cell imageView with icons and modified background colors.<br>
 2)  Added UISwitch option for user to toggle Completion status on DetailTaskViewController and EditTaskViewController<br>
 3)  Customized tableView accessoryView + triggered button action<br>
