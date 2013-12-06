@@ -1,11 +1,11 @@
- overdue by lenli
+"Overdue"
 ==================
 
-a “Task List” iOS app for Code Coalition iOS Beginner Bootcamp
+Overdue is a “Task List” iOS app that I created for an assignment in my Code Coalition iOS Beginner Bootcamp class.
 
-For extra credit, I also did the following:
-
+However, I added some extra credit functionality:
 1)  Customized tableView cell imageView with icons and modified background colors.<br>
 2)  Added UISwitch option for user to toggle Completion status on DetailTaskViewController and EditTaskViewController<br>
 3)  Customized tableView accessoryView + triggered button action<br>
-
+4)  Added launch image<br>
+5)  Added app icon<br>
